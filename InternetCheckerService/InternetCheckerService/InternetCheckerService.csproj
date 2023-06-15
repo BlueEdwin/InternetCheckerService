@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>dotnet-InternetCheckerService-55ce6e16-efaf-4d2e-bb6f-1f11e8f1120c</UserSecretsId>
+	<OutputType>exe</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
