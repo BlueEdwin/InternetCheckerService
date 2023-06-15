@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternetCheckerService", "InternetCheckerService\InternetCheckerService.csproj", "{76FFE0C2-C444-41FF-A059-EF9AA91F6DAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76FFE0C2-C444-41FF-A059-EF9AA91F6DAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76FFE0C2-C444-41FF-A059-EF9AA91F6DAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76FFE0C2-C444-41FF-A059-EF9AA91F6DAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76FFE0C2-C444-41FF-A059-EF9AA91F6DAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F42D90F7-E56F-4FF8-89C2-DE75C86BE1CA}
+	EndGlobalSection
+EndGlobal
