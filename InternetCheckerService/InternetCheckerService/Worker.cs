@@ -1,3 +1,5 @@
+using System.Net.NetworkInformation;
+
 namespace InternetCheckerService
 {
     public class Worker : BackgroundService
@@ -42,6 +44,17 @@ namespace InternetCheckerService
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
                 Log($"Worker running at: {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
 
+                bool pingResult = IsConnectedToInternet();
+
+                if (pingResult)
+                {
+                    Log($"Target host internet connected!");
+                }
+                else
+                {
+                    Log("Internet connection failure!");
+                }
+
                 await Task.Delay(10000, stoppingToken);
             }
         }
@@ -55,5 +68,20 @@ namespace InternetCheckerService
             checkerLogger = null!;
             await base.StopAsync(stoppingToken);
         }
+
+        public bool IsConnectedToInternet()
+        {
+            string host = "www.google.com.tw";
+
+            Ping p = new Ping();
+
+            PingReply reply = p.Send(host, 3000);
+
+            if (reply.Status == IPStatus.Success)
+                return true;
+            else
+                return false;
+        }
+
     }
 }
