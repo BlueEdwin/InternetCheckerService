@@ -8,7 +8,8 @@ IHost host = Host.CreateDefaultBuilder(args)
     })
     .ConfigureServices(services =>
     {
-        services.AddHostedService<Worker>();
+        //services.AddHostedService<Worker>();
+        services.AddHostedService<TimedInternetChecker>(); //Add the Timed based service(System.Threading.Timer)
     })
     .Build();
 
