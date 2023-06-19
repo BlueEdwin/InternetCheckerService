@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 
@@ -74,11 +75,11 @@ namespace InternetCheckerService
         /// <param name="state"></param>
         private void DoWork(object? state, ElapsedEventArgs e)
         {
-            var count = Interlocked.Increment(ref executionCount);
+            string count = Interlocked.Increment(ref executionCount).ToString();
+            string signalTime = e.SignalTime.ToString("yyyy-MM-dd hh:mm:ss.fff");
+            _logger.LogInformation("Checker is working. Count: {count}.  Time: {Time}", count, signalTime);
 
-            _logger.LogInformation("Checker is working. Count: {Count}", count);
-
-            Log("Checker is working. Count: {Count}" + count.ToString());
+            Log("Checker is working. Count: {Count}" + count.ToString() + "Time:" + signalTime);
 
             bool pingResult = IsConnectedToInternet();
 
