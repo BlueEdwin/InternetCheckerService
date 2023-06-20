@@ -109,6 +109,8 @@ namespace InternetCheckerService
             if (reply.Status == IPStatus.Success)
             {
                 Log("Target host is connected..." + DateTime.Now.ToString());
+                Log(" Address:" + reply.Address.ToString() + " RoundTrip Time:" + reply.RoundtripTime + " Time to live:" + reply.Options.Ttl.ToString() + " Don't fragment:" + reply.Options.DontFragment + " Buffer size:" + reply.Buffer.Length);
+                _logger.LogInformation(" Address:" + reply.Address.ToString() + " RoundTrip Time:" + reply.RoundtripTime + " Time to live:" + reply.Options.Ttl.ToString() + " Don't fragment:" + reply.Options.DontFragment + " Buffer size:" + reply.Buffer.Length);
                 return true;
             }
             else
